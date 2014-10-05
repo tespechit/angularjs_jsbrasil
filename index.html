@@ -18,10 +18,12 @@
         <p class="username">Bem-vindo, {{ user.details.username }}</p>
         <p class="id">ID do Usuário: {{user.details.id }}</p>
 
+        <hr>
+
         <p><strong>2. Diretiva</strong></p>
         <a custom-button>Teste</a>
 
-        <br>
+        <hr>
 
         <p><strong>3. Services</strong></p>
         <p>Usando service Math</p>
@@ -67,7 +69,7 @@
         <br>
 
         <div ng-controller="EmailCtrl">
-            <p>Acessando messages.json</p>
+            <p>Simulando acesso a API, com messages.json</p>
             <ul>
                 <li ng-repeat="message in emails.messages">
                     <p>From: {{message.from}}</p>
@@ -75,6 +77,18 @@
                     <p>{{message.sent | date: 'MMM d, y h:mm:ss a'}}</p>
                 </li>
             </ul>
+        </div>
+
+        <div ng-controller="EmailLocalCtrl">
+            <p>Mensagens locais com EmailLocalCtrl</p>
+            <ul>
+                <li ng-repeat="message in emails.messages">
+                    <p>From: {{message.from}}</p>
+                    <p>Subject: {{message.subject}}</p>
+                    <p>{{message.sent | date: 'MMM d, y h:mm:ss a'}}</p>
+                </li>
+            </ul>
+            <h4><a href="" ng-click="deleteEmail($index)">Delete E-mail</a></h4>
         </div>
     </div>
 </body>

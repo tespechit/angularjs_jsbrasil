@@ -88,3 +88,34 @@ myApp.controller('EmailCtrl', ['$scope', '$http', function($scope, $http) {
         alert("Deu erro: " + data);
     });
 }])
+
+
+myApp.controller ('EmailLocalCtrl', ['$scope', function ($scope) {
+
+    // crie um Objeto emails
+    $scope.emails = {};
+
+    // simulando dados que nós iremos receber de volta do servidor
+    // este é um ARRAY de OBJETOS
+    $scope.emails.messages = [{
+        "from": "Steve Jobs",
+        "subject": "I think I'm holding my phone wrong :/",
+        "sent": "2013-10-01T08:05:59Z"
+    },{
+        "from": "Ellie Goulding",
+        "subject": "I've got Starry Eyes, lulz",
+        "sent": "2013-09-21T19:45:00Z"
+    },{
+        "from": "Michael Stipe",
+        "subject": "Everybody hurts, sometimes.",
+        "sent": "2013-09-12T11:38:30Z"
+    },{
+        "from": "Jeremy Clarkson",
+        "subject": "Think I've found the best car... In the world",
+        "sent": "2013-09-03T13:15:11Z"
+    }];
+
+    $scope.deleteEmail = function(index) {
+        $scope.emails.messages.splice(index, 1);
+    };
+}]);
