@@ -5,6 +5,7 @@
     <script src="lib/jquery.js"></script>
     <script src="lib/angular.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/directives.js"></script>
     <title>Guia Definitivo AngularJS</title>
 </head>
 <body>
@@ -12,6 +13,8 @@
         <div ng-controller="UserCtrl">
             <p class="username">Bem-vindo, {{ user.details.username }}</p>
             <p class="id">ID do Usuário: {{user.details.id }}</p>
+
+            <a custom-button></a>
         </div>
     </div>
 </body>
