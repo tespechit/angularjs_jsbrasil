@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "private": true,
+  "name": "angularjs_brasiljs",
+  "description": "Exemplos usado no artigo 'Guia Definitivo para aprender AngularJS em um dia'",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gilsondev/angularjs_jsbrasil"
+  },
+  "devDependencies": {
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  },
+  "keywords": [
+    "angularjs"
+  ]
+}
