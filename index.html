@@ -6,6 +6,7 @@
     <script src="lib/angular.js"></script>
     <script src="js/main.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
     <title>Guia Definitivo AngularJS</title>
 </head>
 <body>
@@ -14,7 +15,16 @@
             <p class="username">Bem-vindo, {{ user.details.username }}</p>
             <p class="id">ID do Usuário: {{user.details.id }}</p>
 
-            <a custom-button></a>
+            <p>Diretiva:</p>
+            <a custom-button>Teste</a>
+
+            <br>
+
+            <p>Services:</p>
+            <p>Usando service Math</p>
+            <p>Valor de a: {{a}}</p>
+            <p>Valor de b: {{b}}</p>
+            <p>Resultado de a * b: {{result}}</p>
         </div>
     </div>
 </body>
