@@ -40,3 +40,10 @@ myApp.controller('FilterCtrl', ['$scope', function($scope) {
         return item > $scope.lowerBound;
     }
 }]);
+
+
+myApp.controller('TwoBindCtrl', ['$scope', function($scope) {
+    // Captura o modelo de dado
+    // e/ou inicializa-o com a string existente
+    $scope.myModel = '';
+}]);

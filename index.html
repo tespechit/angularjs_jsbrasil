@@ -50,6 +50,9 @@
 
     <hr>
 
-    <div></div>
+    <div ng-controller="TwoBindCtrl">
+        <input type="text" placeholder="Start typing..." ng-model="myModel">
+        <p>Meu modelo de dados: {{ myModel | default: "Nada digitado" }}</p>
+    </div>
 </body>
 </html>

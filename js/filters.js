@@ -18,3 +18,15 @@ myApp.filter('reverse', function() {
 
     return reverseFunction
 });
+
+// Filter criado para definir um texto padrão, caso o valor
+// da variavel de escopo estiver vazio.
+myApp.filter('default', function() {
+    return function(input, textDefault) {
+        if (input.length == 0) {
+            return textDefault;
+        } else {
+            return input;
+        }
+    };
+});
