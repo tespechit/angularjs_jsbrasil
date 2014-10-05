@@ -47,3 +47,44 @@ myApp.controller('TwoBindCtrl', ['$scope', function($scope) {
     // e/ou inicializa-o com a string existente
     $scope.myModel = '';
 }]);
+
+myApp.controller('UserCtrl', ['$scope', '$http', function($scope, $http) {
+    // crie um Objeto user
+    $scope.user = {};
+
+    // Inicialize um modelo como uma string vazia
+    $scope.user.name = '';
+
+    // Nós precisamos fazer uma chamada e um get
+    // o nome do usuário
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8000/api/users.json'
+    })
+    .success(function(data, status, headers, config) {
+        // Veja aqui, nós estamos agora atribuindo este username
+        // ao nosso Model existente!
+        $scope.user.username = data.user.name;
+    })
+    .error(function(data, status, headers, config) {
+        // algum erro aconteceu :(
+    });
+}]);
+
+
+myApp.controller('EmailCtrl', ['$scope', '$http', function($scope, $http) {
+    // crie um Objeto emails
+    $scope.emails = {};
+    $scope.emails.messages = [];
+
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8000/api/messages.json'
+    })
+    .success(function(data, status, headers, config) {
+        $scope.emails.messages = data;
+    })
+    .error(function(data, status, headers, config) {
+        alert("Deu erro: " + data);
+    });
+}])
