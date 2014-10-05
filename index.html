@@ -8,25 +8,48 @@
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
     <script src="js/factories.js"></script>
+    <script src="js/filters.js"></script>
+
     <title>Guia Definitivo AngularJS</title>
 </head>
-<body>
-    <div ng-app="myApp">
-        <div ng-controller="UserCtrl">
-            <p class="username">Bem-vindo, {{ user.details.username }}</p>
-            <p class="id">ID do Usuário: {{user.details.id }}</p>
+<body ng-app="myApp">
+    <div ng-controller="UserCtrl">
+        <p><strong>1. Basico</strong></p>
+        <p class="username">Bem-vindo, {{ user.details.username }}</p>
+        <p class="id">ID do Usuário: {{user.details.id }}</p>
 
-            <p>Diretiva:</p>
-            <a custom-button>Teste</a>
+        <p><strong>2. Diretiva</strong></p>
+        <a custom-button>Teste</a>
 
-            <br>
+        <br>
 
-            <p>Services:</p>
-            <p>Usando service Math</p>
-            <p>Valor de a: {{a}}</p>
-            <p>Valor de b: {{b}}</p>
-            <p>Resultado de a * b: {{result}}</p>
-        </div>
+        <p><strong>3. Services</strong></p>
+        <p>Usando service Math</p>
+        <p>Valor de a: {{a}}</p>
+        <p>Valor de b: {{b}}</p>
+        <p>Resultado de a * b: {{result}}</p>
     </div>
+
+    <hr>
+
+    <div ng-controller="FilterCtrl">
+        <p><strong>4. Filtros</strong></p>
+
+        <p>Sem filtro: {{greeting}}</p>
+        <p>Reverse: {{greeting | reverse }}</p>
+
+        <br>
+
+        <p>Usando dentro do ng-repeat</p>
+        <p>myNumbers: {{myNumbers}}</p>
+        <p>lowerBound: {{lowerBound}}</p>
+        <ul>
+            <li ng-repeat="number in myNumbers | filter:greaterThanNum">{{ number }}</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div></div>
 </body>
 </html>

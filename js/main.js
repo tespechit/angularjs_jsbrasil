@@ -26,3 +26,17 @@ myApp.controller('MainCtrl', ['$scope', 'Server', function($scope, Server) {
     Server.get(jsonGet);
     Server.post(jsonPost);
 }]);
+
+
+myApp.controller('FilterCtrl', ['$scope', function($scope) {
+    $scope.greeting = "Todd Motto";
+
+    $scope.myNumbers = [10, 25, 35, 45, 60, 80, 100];
+
+    $scope.lowerBound = 42;
+
+    // Fazendo os filters
+    $scope.greaterThanNum = function(item) {
+        return item > $scope.lowerBound;
+    }
+}]);
