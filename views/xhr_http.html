@@ -1,0 +1,30 @@
+<div ng-controller="UserCtrl">
+    <p><strong>6. XHR/Ajax/$http chamadas e ligação JSON</strong></p>
+    <br>
+    <p>Acessando users.json</p>
+    <p>{{ user.username }}</p>
+</div>
+<br>
+
+<div ng-controller="EmailCtrl">
+    <p>Simulando acesso a API, com messages.json</p>
+    <ul>
+        <li ng-repeat="message in emails.messages">
+            <p>From: {{message.from}}</p>
+            <p>Subject: {{message.subject}}</p>
+            <p>{{message.sent | date: 'MMM d, y h:mm:ss a'}}</p>
+        </li>
+    </ul>
+</div>
+
+<div ng-controller="EmailLocalCtrl">
+    <p>Mensagens locais com EmailLocalCtrl</p>
+    <ul>
+        <li ng-repeat="message in emails.messages">
+            <p>From: {{message.from}}</p>
+            <p>Subject: {{message.subject}}</p>
+            <p>{{message.sent | date: 'MMM d, y h:mm:ss a'}}</p>
+        </li>
+    </ul>
+    <h4><a href="" ng-click="deleteEmail($index)">Delete E-mail</a></h4>
+</div>

@@ -1,0 +1,13 @@
+<p><strong>4. Filtros</strong></p>
+
+<p>Sem filtro: {{greeting}}</p>
+<p>Reverse: {{greeting | reverse }}</p>
+
+<br>
+
+<p>Usando dentro do ng-repeat</p>
+<p>myNumbers: {{myNumbers}}</p>
+<p>lowerBound: {{lowerBound}}</p>
+<ul>
+    <li ng-repeat="number in myNumbers | filter:greaterThanNum">{{ number }}</li>
+</ul>

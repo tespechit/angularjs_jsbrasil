@@ -3,112 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <script src="lib/jquery.js"></script>
-    <script src="lib/angular.js"></script>
-    <script src="js/main.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-resource.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
     <script src="js/factories.js"></script>
     <script src="js/filters.js"></script>
+    <script src="js/main.js"></script>
 
     <title>Guia Definitivo AngularJS</title>
 </head>
 <body ng-app="myApp">
-    <div ng-controller="UserCtrl">
-        <p><strong>1. Basico</strong></p>
-        <p class="username">Bem-vindo, {{ user.details.username }}</p>
-        <p class="id">ID do Usuário: {{user.details.id }}</p>
-
-        <hr>
-
-        <p><strong>2. Diretiva</strong></p>
-        <a custom-button>Teste</a>
-
-        <hr>
-
-        <p><strong>3. Services</strong></p>
-        <p>Usando service Math</p>
-        <p>Valor de a: {{a}}</p>
-        <p>Valor de b: {{b}}</p>
-        <p>Resultado de a * b: {{result}}</p>
-    </div>
-
-    <hr>
-
-    <div ng-controller="FilterCtrl">
-        <p><strong>4. Filtros</strong></p>
-
-        <p>Sem filtro: {{greeting}}</p>
-        <p>Reverse: {{greeting | reverse }}</p>
-
-        <br>
-
-        <p>Usando dentro do ng-repeat</p>
-        <p>myNumbers: {{myNumbers}}</p>
-        <p>lowerBound: {{lowerBound}}</p>
-        <ul>
-            <li ng-repeat="number in myNumbers | filter:greaterThanNum">{{ number }}</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div ng-controller="TwoBindCtrl">
-        <p><strong>5. Two-way data-binding</strong></p>
-        <input type="text" placeholder="Start typing..." ng-model="myModel">
-        <p>Meu modelo de dados: {{ myModel | default: "Nada digitado" }}</p>
-    </div>
-
-    <hr>
-
-    <div ng-controller="UserCtrl">
-        <p><strong>6. XHR/Ajax/$http chamadas e ligação JSON</strong></p>
-        <br>
-        <p>Acessando users.json</p>
-        <p>{{ user.username }}</p>
-
-        <br>
-
-        <div ng-controller="EmailCtrl">
-            <p>Simulando acesso a API, com messages.json</p>
-            <ul>
-                <li ng-repeat="message in emails.messages">
-                    <p>From: {{message.from}}</p>
-                    <p>Subject: {{message.subject}}</p>
-                    <p>{{message.sent | date: 'MMM d, y h:mm:ss a'}}</p>
-                </li>
-            </ul>
-        </div>
-
-        <div ng-controller="EmailLocalCtrl">
-            <p>Mensagens locais com EmailLocalCtrl</p>
-            <ul>
-                <li ng-repeat="message in emails.messages">
-                    <p>From: {{message.from}}</p>
-                    <p>Subject: {{message.subject}}</p>
-                    <p>{{message.sent | date: 'MMM d, y h:mm:ss a'}}</p>
-                </li>
-            </ul>
-            <h4><a href="" ng-click="deleteEmail($index)">Delete E-mail</a></h4>
-        </div>
-    </div>
-
-    <hr>
-
-    <div>
-        <p><strong>7. Métodos DOM Declarativos</strong></p>
-        <a href="" ng-click="toggle = !toggle">Toggle nav</a>
-        <ul ng-show="toggle">
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div>
-        <p><strong>8. Expressões</strong></p>
-        <p>{{ data.length > 0 && 'Meus Dados' || 'Sem Dados' }}</p>
-    </div>
+    <div ng-view></div>
 </body>
 </html>

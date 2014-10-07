@@ -1,14 +1,12 @@
-var myApp = angular.module('myApp', []);
-
-myApp.controller('UserCtrl', ['$scope', 'Math', function($scope, Math) {
-    // Criando o namespace user details
-    // Que nos ajudará no visual do DOM
+myApp.controller('BasicCtrl', function($scope) {
     $scope.user = {};
     $scope.user.details = {
         "username": "Todd Motto",
         "id": "89101112"
     };
+});
 
+myApp.controller('ServiceCtrl', ['$scope', 'Math', function($scope, Math) {
     var a = 12;
     var b = 24;
 
